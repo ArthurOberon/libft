@@ -1,0 +1,8 @@
+{
+    "files.eol": "auto",
+    "editor.unfoldOnClickAfterEndOfLine": false,
+    "editor.insertSpaces": false,
+    "files.associations": {
+        "stdio.h": "c"
+    }
+}
