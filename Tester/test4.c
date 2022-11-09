@@ -6,15 +6,18 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:35:12 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/09 18:07:28 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/09 13:15:35 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../ft_memchr.c"
-#include"../ft_memcmp.c"
-#include"../ft_strnstr.c"
+#include"../ft_toupper.c"
+#include"../ft_tolower.c"
+#include"../ft_strchr.c"
+#include"../ft_strrchr.c"
+#include"../ft_strncmp.c"
 #include <stdio.h>
-#include <bsd/string.h>
+#include <ctype.h>
+#include <string.h>
 
 void	ft_printarray(char *tab, int size)
 {
@@ -43,16 +46,23 @@ void	ft_restab(char *tab, int size)
 
 int	main(void)
 {
+	char	c;
 	char	*string;
 	char	*string2;
 
-	string = "patate";
-	string2 = "atat";
-	printf("%s\n", (char *)ft_memchr(string, 'a', 6));
-	printf("%s\n", (char *)memchr(string, 'a', 6));
-	printf("%d\n", ft_memcmp(string, string2, 6));
-	printf("%d\n", memcmp(string, string2, 6));
-	printf("%s\n", ft_strnstr(string, string2, 5));
-	printf("%s\n", strnstr(string, string2, 5));
+	c = 'a';
+	string = "potate";
+	string2 = "paire";
+	printf("%c\n", c);
+	c = ft_toupper(c);
+	printf("%c\n", c);
+	c = ft_tolower(c);
+	printf("%c\n", c);
+	printf("%s\n", ft_strchr(string, c));
+	printf("%s\n", strchr(string, c));
+	printf("%s\n", ft_strrchr(string, c));
+	printf("%s\n", strrchr(string, c));
+	printf("%d\n", ft_strncmp(string, string2, 2));
+	printf("%d\n", strncmp(string, string2, 2));
 	return (0);
 }
