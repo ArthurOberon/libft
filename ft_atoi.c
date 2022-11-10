@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:21:59 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 17:45:10 by aoberon          ###   ########.fr       */
+/*   Created: 2022/11/10 08:26:55 by aoberon           #+#    #+#             */
+/*   Updated: 2022/11/10 08:59:04 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
 #include <stdio.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
+	int	sign;
+	int	result;
 
-	if (dest - src >= 0)
+	sign = 1;
+	result = 0;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		i = n - 1;
-		while (i != 0)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i--;
-		}
-		((char *)dest)[i] = ((char *)src)[i];
-		return ((void *)dest);
+		if (*nptr == '-')
+			sign *= -1;
+		nptr++;
 	}
-	else
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		i = 0;
-		while (i != n)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i++;
-		}
-		return ((void *)dest);
+		result = result * 10 + *nptr - '0';
+		nptr++;
 	}
+	return (result * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:23:39 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/08 15:43:24 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/10 10:40:59 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i != n)

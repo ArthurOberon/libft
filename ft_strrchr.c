@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:42:32 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/09 12:44:00 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:26:37 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_strrchr(const char *string, int searchedChar)
 	char	*return_value;
 
 	return_value = NULL;
+	if (searchedChar == 0)
+		return ((char *)string + ft_strlen(string));
+	if (searchedChar > 256)
+		searchedChar -= 256;
 	while (*string)
 	{
 		if (*string == searchedChar)

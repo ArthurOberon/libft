@@ -1,2 +1,0 @@
-ft_strlcpy && ft_strlcat -> if (size_t size > 0) ?
-OSKOUR

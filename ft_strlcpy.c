@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:29:19 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/09 10:05:34 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/10 10:28:33 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
+	size_t		i;
 	size_t	length;
 
 	i = 0;
 	length = 0;
 	while (src[length])
 		length++;
-	while (src[i] && (i < (size - 1)))
+	if (size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && (i < (size - 1)))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	return (length);
 }

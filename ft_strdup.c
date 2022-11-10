@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:21:59 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 17:45:10 by aoberon          ###   ########.fr       */
+/*   Created: 2022/11/10 09:32:16 by aoberon           #+#    #+#             */
+/*   Updated: 2022/11/10 09:41:52 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-#include <stdio.h>
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	int		length;
+	char	*result;
 
-	if (dest - src >= 0)
+	length = ft_strlen(s);
+	result = malloc(sizeof(char) * (length + 1));
+	if (result == NULL)
+		return (NULL);
+	length = 0;
+	while (s[length])
 	{
-		i = n - 1;
-		while (i != 0)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i--;
-		}
-		((char *)dest)[i] = ((char *)src)[i];
-		return ((void *)dest);
+		result[length] = s[length];
+		length++;
 	}
-	else
-	{
-		i = 0;
-		while (i != n)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i++;
-		}
-		return ((void *)dest);
-	}
+	result[length] = '\0';
+	return (result);
 }

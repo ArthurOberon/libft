@@ -6,15 +6,17 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:35:12 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 10:01:25 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/10 08:40:31 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../ft_calloc.c"
-#include"../ft_strdup.c"
+#include"../ft_memchr.c"
+#include"../ft_memcmp.c"
+#include"../ft_strnstr.c"
+#include"../ft_atoi.c"
 #include <stdio.h>
+#include <bsd/string.h>
 #include <stdlib.h>
-#include <string.h>
 
 void	ft_printarray(char *tab, int size)
 {
@@ -23,10 +25,7 @@ void	ft_printarray(char *tab, int size)
 	i = 0;
 	while (i < size)
 	{
-		if (tab[i] == 0)
-			printf("NULL,");
-		else
-			printf("%c, ", tab[i]);
+		printf("%c, ", tab[i]);
 		i++;
 	}
 	printf("\n");
@@ -39,27 +38,26 @@ void	ft_restab(char *tab, int size)
 	i = 0;
 	while (i < size)
 	{
-		tab[i] = 'y';
+		tab[i] = 'i';
 		i++;
 	}
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	*tab;
-	char	*tab2;
-	char	tab3[7];
-	char	*tab4;
-	char	*tab5;
+	char	*string;
+	char	*string2;
 
-	tab = ft_calloc(5, sizeof(char));
-	printf("ft_calloc : %s.\n", tab);
-	tab2 = calloc(5, sizeof(char));
-	printf("calloc : %s.\n", tab2);
-	ft_restab(tab3, 7);
-	tab4 = ft_strdup((const char *)tab3);
-	printf("ft_strdup : %s.\n", tab4);
-	tab5 = strdup((const char *)tab3);
-	printf("strdup: %s.\n", tab5);
+	string = "patate";
+	string2 = "atat";
+	printf("%s\n", (char *)ft_memchr(string, 'a', 6));
+	printf("%s\n", (char *)memchr(string, 'a', 6));
+	printf("%d\n", ft_memcmp(string, string2, 6));
+	printf("%d\n", memcmp(string, string2, 6));
+	printf("%s\n", ft_strnstr(string, string2, 5));
+	printf("%s\n", strnstr(string, string2, 5));
+	printf("\n\n");
+	printf("ft_atoi : %d\n", ft_atoi(argv[1]));
+	printf("atoi : %d\n", atoi(argv[1]));
 	return (0);
 }

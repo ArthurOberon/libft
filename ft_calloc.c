@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:21:59 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 17:45:10 by aoberon          ###   ########.fr       */
+/*   Created: 2022/11/10 09:01:30 by aoberon           #+#    #+#             */
+/*   Updated: 2022/11/10 11:35:11 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-#include <stdio.h>
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
+	void	*result;
 
-	if (dest - src >= 0)
-	{
-		i = n - 1;
-		while (i != 0)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i--;
-		}
-		((char *)dest)[i] = ((char *)src)[i];
-		return ((void *)dest);
-	}
-	else
-	{
-		i = 0;
-		while (i != n)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i++;
-		}
-		return ((void *)dest);
-	}
+	if (nmemb == 0 || size == 0 || SIZE_MAX / nmemb < size)
+		return (NULL);
+	result = malloc(nmemb * size);
+	if (result == NULL)
+		return (NULL);
+	ft_bzero(result, (nmemb * size));
+	return (result);
 }
