@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:12:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 11:35:19 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/11 16:44:49 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_strrchr(const char *string, int searchedChar);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
