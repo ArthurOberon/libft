@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:45:41 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/09 13:06:20 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:27:41 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_strncmp(const char *first, const char *second, size_t length)
 	i = 0;
 	while (i < length)
 	{
-		if (first[i] != second[i])
-			return (first[i] - second[i]);
+		if (((unsigned char *)first)[i] != ((unsigned char *)second)[i])
+			return (((unsigned char *)first)[i] - ((unsigned char *)second)[i]);
 		i++;
 	}
 	return (0);

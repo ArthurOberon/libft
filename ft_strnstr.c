@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:38:47 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 17:52:59 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:42:38 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	j = 0;
+	if (!*s2)
+		return ((char *)s1);
 	if ((!ft_strncmp(s1, "", ft_strlen(s1))
 			&& !ft_strncmp(s2, "", ft_strlen(s2))))
 		return ((char *)s1);

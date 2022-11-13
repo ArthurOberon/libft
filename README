@@ -1,0 +1,17 @@
+ft_memmove:    [OK] [CRASH] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+[crash]: your memmove's return is false/does not work with basic input
+
+ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] 
+[fail]: your strncmp doesn't stop at \0
+
+ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] 
+[crash]: your strlcat crush when null parameter is sent with a size of 0
+
+ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] 
+[crash]: your strnstr crush when null parameter is sent with a size of 0
+
+ft_calloc:     [OK] [OK] [OK] [FAILED] [OK] 
+[fail]: your calloc don't work with 0 size
+
+ft_itoa:       [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] [OK] [OK] 
+[crash]: you did not protect your malloc

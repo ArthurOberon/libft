@@ -6,60 +6,79 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:29:36 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/11 19:25:18 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:46:47 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include "stdio.h"
 
-static size_t	ft_nbr_length(int nbr)
+static void	ft_addchar(char c, char *str)
 {
-	size_t	length;
+	int	i;
 
-	length = 0;
-	if (nbr < 0)
+	i = 0;
+	while (str[i] && str[i] != 1)
+		i++;
+	if (str[i])
+		str[i] = c;
+	else
+		str[i] = '\0';
+}
+
+static void	ft_itoa_recursive(unsigned int n, char	*str)
+{
+	if (n < 10)
+		ft_addchar(n + '0', str);
+	else
 	{
-		length++;
-		nbr = -nbr;
+		ft_itoa_recursive(n / 10, str);
+		ft_itoa_recursive(n % 10, str);
 	}
-	while (nbr / 10)
+}
+
+static	size_t	length_nbr(unsigned int nb)
+{
+	if (nb < 10)
+		return (1);
+	else
+		return (1 + length_nbr(nb / 10));
+}
+
+static char	*ft_initstr(int n)
+{
+	unsigned int	tmp;
+	char			*str;
+	size_t			size;
+
+	if (n < 0)
+		tmp = -n;
+	else
+		tmp = n;
+	size = (length_nbr(tmp) + (n < 0));
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	else
 	{
-		length++;
-		nbr = nbr / 10;
+		ft_memset(str, 1, size);
+		str[size] = '\0';
 	}
-	length++;
-	return (length);
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	length;
-	int		sign;
 	char	*result;
 
-	sign = 1;
-	length = ft_nbr_length(n);
-	int length2 = length;
+	result = ft_initstr(n);
 	if (n < 0)
-		sign = -1;
-	if (n == 0)
-		return (ft_strdup("0"));
-	result = malloc(sizeof(char) * (length + 1));
-	printf("%ld\n", length + 1);
-	if (!result)
-		return (NULL);
-	result[length--] = '\0';
-	if (n < 0)
-		result[0] = '-';
-	while (n > 0)
 	{
-		result[length] = (n % 10) * sign + '0';
-		n = n / 10;
-		length--;
+		ft_addchar('-', result);
+		if (n < -9)
+			ft_itoa_recursive(n / -10, result);
+		ft_addchar(-(n % 10) + '0', result);
 	}
-	write(1, "res = ", 6);
-	write(1, result, length2);
-	write(1, "\n", 1);
+	else
+		ft_itoa_recursive(n, result);
 	return (result);
 }
