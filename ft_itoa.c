@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:29:36 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/13 18:46:47 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 09:36:34 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,8 @@ static char	*ft_initstr(int n)
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
-	else
-	{
-		ft_memset(str, 1, size);
-		str[size] = '\0';
-	}
+	ft_memset(str, 1, size);
+	str[size] = '\0';
 	return (str);
 }
 
@@ -71,6 +68,8 @@ char	*ft_itoa(int n)
 	char	*result;
 
 	result = ft_initstr(n);
+	if (!result)
+		return (NULL);
 	if (n < 0)
 	{
 		ft_addchar('-', result);

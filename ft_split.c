@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:37:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/13 18:38:45 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 09:25:14 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,17 @@ static char	*ft_strcpy(char *src, int n)
 	return (dest);
 }
 
+static char	**ft_rewind_free(char	**result, size_t y)
+{
+	while (y <= 0)
+	{
+		free(result[y]);
+		y--;
+	}
+	free(result);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -76,6 +87,8 @@ char	**ft_split(char const *s, char c)
 			s++;
 		y = ft_word_length((char *)s, c);
 		result[i] = ft_strcpy((char *)s, y);
+		if (!y)
+			return (ft_rewind_free(result, y));
 		s += y;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:21:59 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:41 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:08:49 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	if (!dest && !src)
 		return (NULL);
+	if (!n)
+		return ((void *)dest);
 	if (dest - src >= 0)
 	{
 		i = n - 1;
@@ -33,12 +35,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		i = 0;
-		while (i != n)
-		{
+		i = -1;
+		while (++i != n)
 			((char *)dest)[i] = ((char *)src)[i];
-			i++;
-		}
 		return ((void *)dest);
 	}
 }
