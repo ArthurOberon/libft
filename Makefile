@@ -28,10 +28,6 @@ all:	${NAME}
 .c.o:
 	${CC} -c $< -o ${<:.c=.o}
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS)
-
 ${NAME}:	${OBJS}
 		ar rc ${NAME} ${OBJS}
 	
