@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:54:22 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 11:34:10 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:22:08 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	length = 0;
 	while (s[length] != '\0')
-	{
 		length++;
-	}
 	return (length);
 }

@@ -6,13 +6,11 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:03:29 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/10 16:25:27 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:31:03 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
-#include <stdio.h>
 
 char	*ft_strchr(const char *string, int searchedChar)
 {

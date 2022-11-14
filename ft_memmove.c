@@ -6,13 +6,11 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:21:59 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/14 11:08:49 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:31:15 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -22,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	if (!n)
 		return ((void *)dest);
-	if (dest - src >= 0)
+	if (dest > src)
 	{
 		i = n - 1;
 		while (i != 0)

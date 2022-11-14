@@ -6,12 +6,11 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:38:47 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/14 11:06:34 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:24:04 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include <stdio.h>
 
 static char	*ft_strnstr_helper(const char *s1, const char *s2, size_t n)
 {
