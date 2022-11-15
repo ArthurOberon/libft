@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:12:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/13 18:00:26 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 16:11:56 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_tolower(int character);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *first, const char *second, size_t length);
 int		ft_lstsize(t_list *lst);
+int		ft_nbrlen(int nb);
 char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_strrchr(const char *string, int searchedChar);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
@@ -60,6 +61,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
+void	ft_putstr(char *s);
+void	ft_putendl(char *s);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *str, size_t size);

@@ -1,5 +1,6 @@
 NAME = libft.a
 
+#MANDATORY PART
 SRCS =	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -34,7 +35,15 @@ SRCS =	ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		
+
+#PERSONAL FUNCTION
+
+P_SRCS = 	ft_putchar.c \
+			ft_putstr.c \
+			ft_putendl.c \
+			ft_putnbr.c \
+			ft_nbrlen.c \
+
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
@@ -54,6 +63,8 @@ CC = gcc -Wall -Wextra -Werror -I${INC}
 
 OBJS = ${SRCS:.c=.o}
 
+PSRCS_OBJS = ${P_SRCS:.c=.o}
+
 BONUS_OBJS = ${BONUS:.c=.o}
 
 all:	${NAME}
@@ -61,14 +72,14 @@ all:	${NAME}
 .c.o:
 	${CC} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-		ar rc ${NAME} ${OBJS}
+${NAME}:	${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
+		ar rc ${NAME} ${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
 	
 bonus: ${BONUS_OBJS} ${OBJS}
 	ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:	
-	${RM} ${OBJS} ${BONUS_OBJS}
+	${RM} ${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
 
 fclean:	clean
 	${RM} ${NAME}
