@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:12:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 21:00:43 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:04:54 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void	ft_putnbr_base_fd(long nbr, char *base, int fd);
 void	ft_putnbr_base(long nbr, char *base);
 void	ft_print_hexa_fd(unsigned char *adr, int fd);
 void	ft_print_hexa(unsigned char *adr);
-void	ft_print_address_fd(unsigned int adr, char *base, int fd);
-void	ft_print_address(unsigned int adr, char *base);
+void	ft_print_address_fd(unsigned int adr, int fd);
+void	ft_print_address(unsigned int adr);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *str, size_t size);
