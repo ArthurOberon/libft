@@ -6,12 +6,14 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:04:34 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 16:12:39 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:11:24 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_nbrlen(int nb)
+int	ft_nbrlen(long nb)
 {
+	if (nb < 0)
+		nb = -nb;
 	if (nb < 10)
 		return (1);
 	else
