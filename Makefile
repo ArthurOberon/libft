@@ -43,6 +43,13 @@ P_SRCS = 	ft_putchar.c \
 			ft_putendl.c \
 			ft_putnbr.c \
 			ft_nbrlen.c \
+			ft_putnbr_base_fd.c \
+			ft_putnbr_base.c \
+			ft_print_hexa_fd.c \
+			ft_print_hexa.c \
+			ft_print_address_fd.c \
+			ft_print_address.c \
+
 
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
