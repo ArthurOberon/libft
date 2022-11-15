@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:34:46 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 20:34:51 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:00:19 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_hexa_fd(unsigned char *adr, int fd)
 {
-	char	hexa;
+	char	*hexa;
 	int		i;
 
 	hexa = "0123456789abcdef";

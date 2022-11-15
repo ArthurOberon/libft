@@ -6,13 +6,13 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:33:44 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 20:35:33 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:00:37 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_print_hexa(unsigned char *adr, int fd)
+void	ft_print_hexa(unsigned char *adr)
 {
 	ft_print_hexa_fd(adr, 1);
 }

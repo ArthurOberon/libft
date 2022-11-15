@@ -6,13 +6,13 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:19:33 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 20:20:35 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:00:04 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(long nbr, char *base)
 {
-	ft_print_hexa_fd(nbr, base, 1);
+	ft_putnbr_base_fd(nbr, base, 1);
 }

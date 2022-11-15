@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:12:23 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 20:44:05 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 20:58:07 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_check_base(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base_fd(unsigned int nbr, char *base, int fd)
+void	ft_putnbr_base_fd(long nbr, char *base, int fd)
 {
 	size_t		base_length;
 	long		nbr_converted;
@@ -50,8 +50,8 @@ void	ft_putnbr_base_fd(unsigned int nbr, char *base, int fd)
 			ft_putchar_fd('-', fd);
 			nbr_converted = -nbr_converted;
 		}
-		if (nbr_converted >= base_length)
+		if (nbr_converted >= (long)base_length)
 			ft_putnbr_base_fd(nbr_converted / base_length, base, fd);
-		ft_putchar_fd(base[nbr_converted % base], fd);
+		ft_putchar_fd(base[nbr_converted % base_length], fd);
 	}
 }

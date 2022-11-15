@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:12:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 20:48:57 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:00:43 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,10 @@ void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 void	ft_putstr(char *s);
 void	ft_putendl(char *s);
-void	ft_putnbr_base_fd(int nbr, char *base, int fd);
-void	ft_putnbr_base(int nbr, char *base);
+void	ft_putnbr_base_fd(long nbr, char *base, int fd);
+void	ft_putnbr_base(long nbr, char *base);
 void	ft_print_hexa_fd(unsigned char *adr, int fd);
-void	ft_print_hexa(unsigned char *adr, int fd);
-void	ft_print_address(unsigned int adr);
+void	ft_print_hexa(unsigned char *adr);
 void	ft_print_address_fd(unsigned int adr, char *base, int fd);
 void	ft_print_address(unsigned int adr, char *base);
 size_t	ft_strlen(const char *s);
