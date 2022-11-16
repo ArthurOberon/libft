@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:12:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 21:04:54 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/16 12:32:07 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_tolower(int character);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *first, const char *second, size_t length);
 int		ft_lstsize(t_list *lst);
-int		ft_nbrlen(int nb);
+int		ft_nbrlen(long nb);
 char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_strrchr(const char *string, int searchedChar);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
@@ -67,10 +67,8 @@ void	ft_putstr(char *s);
 void	ft_putendl(char *s);
 void	ft_putnbr_base_fd(long nbr, char *base, int fd);
 void	ft_putnbr_base(long nbr, char *base);
-void	ft_print_hexa_fd(unsigned char *adr, int fd);
-void	ft_print_hexa(unsigned char *adr);
-void	ft_print_address_fd(unsigned int adr, int fd);
-void	ft_print_address(unsigned int adr);
+void	ft_print_address_fd(void *ptr, int fd);
+void	ft_print_address(void *ptr);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *str, size_t size);

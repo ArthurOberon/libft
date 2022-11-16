@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:12:23 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 20:58:07 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/16 11:39:41 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putnbr_base_fd(long nbr, char *base, int fd)
 	size_t		base_length;
 	long		nbr_converted;
 
-	nbr_converted = (long)nbr;
+	nbr_converted = nbr;
 	base_length = ft_strlen(base);
 	if (base_length <= 1)
 		return ;

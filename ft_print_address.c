@@ -6,13 +6,13 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:36:23 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 21:05:24 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/16 11:42:14 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_print_address(unsigned int adr)
+void	ft_print_address(void *ptr)
 {
-	ft_print_address_fd(adr, 1);
+	ft_print_address_fd(ptr, 1);
 }
