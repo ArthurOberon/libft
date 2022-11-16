@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 08:26:55 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/14 14:01:48 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:00:45 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	result = 0;
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
+	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{

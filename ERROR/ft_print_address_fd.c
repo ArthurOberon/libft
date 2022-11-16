@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexa_fd.c                                 :+:      :+:    :+:   */
+/*   ft_print_address_fd.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 19:34:46 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 21:00:19 by aoberon          ###   ########.fr       */
+/*   Created: 2022/11/15 20:45:58 by aoberon           #+#    #+#             */
+/*   Updated: 2022/11/16 21:07:02 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_print_hexa_fd(unsigned char *adr, int fd)
+void	ft_print_address_fd(void *ptr, int fd)
 {
-	char	*hexa;
-	int		i;
 
-	hexa = "0123456789abcdef";
-	i = 0;
-	while (adr[i])
-	{
-		ft_putchar_fd(hexa[adr[i] / 16], fd);
-		ft_putchar_fd(hexa[adr[i] % 16], fd);
-		i++;
-	}
 }

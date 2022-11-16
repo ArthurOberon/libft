@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:29:36 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/14 09:36:34 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/16 20:03:51 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,7 @@ static void	ft_itoa_recursive(unsigned int n, char	*str)
 	}
 }
 
-static	size_t	length_nbr(unsigned int nb)
-{
-	if (nb < 10)
-		return (1);
-	else
-		return (1 + length_nbr(nb / 10));
-}
-
-static char	*ft_initstr(int n)
+static char	*ft_initstr(long n)
 {
 	unsigned int	tmp;
 	char			*str;
@@ -54,7 +46,7 @@ static char	*ft_initstr(int n)
 		tmp = -n;
 	else
 		tmp = n;
-	size = (length_nbr(tmp) + (n < 0));
+	size = (ft_nbrlen(tmp) + (n < 0));
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
@@ -63,7 +55,7 @@ static char	*ft_initstr(int n)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	char	*result;
 

@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 19:33:44 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/15 21:00:37 by aoberon          ###   ########.fr       */
+/*   Created: 2022/11/16 14:57:37 by aoberon           #+#    #+#             */
+/*   Updated: 2022/11/16 14:58:31 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_print_hexa(unsigned char *adr)
+unsigned int	ft_abs(int n)
 {
-	ft_print_hexa_fd(adr, 1);
-}
+	if (n < 0)
+		return (-n);
+	return (n);
+}	
