@@ -6,13 +6,13 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:57:37 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/16 14:58:31 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/17 19:19:34 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-unsigned int	ft_abs(int n)
+long unsigned int	ft_abs(long n)
 {
 	if (n < 0)
 		return (-n);

@@ -6,11 +6,11 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:12:23 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/16 14:38:47 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/17 10:46:27 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include"../libft.h"
 
 static int	ft_check_base(char *base)
 {

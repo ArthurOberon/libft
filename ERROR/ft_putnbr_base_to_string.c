@@ -6,11 +6,11 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:07:07 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/16 20:57:55 by aoberon          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:55:41 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include"../libft.h"
 
 static size_t	ft_longueur(long nbr, size_t base_length)
 {
