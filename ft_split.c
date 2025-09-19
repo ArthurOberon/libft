@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:37:31 by aoberon           #+#    #+#             */
-/*   Updated: 2022/11/14 09:25:14 by aoberon          ###   ########.fr       */
+/*   Updated: 2024/05/19 16:14:27 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static size_t	ft_word_count(char *s, char c)
 	return (count);
 }
 
-static char	*ft_strcpy(char *src, int n)
+static char	*ft_strncpy(char *src, int n)
 {
 	int		i;
 	char	*dest;
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		y = ft_word_length((char *)s, c);
-		result[i] = ft_strcpy((char *)s, y);
+		result[i] = ft_strncpy((char *)s, y);
 		if (!y)
 			return (ft_rewind_free(result, y));
 		s += y;

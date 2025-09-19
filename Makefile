@@ -44,13 +44,7 @@ P_SRCS = 	ft_abs.c \
 			ft_putchar.c \
 			ft_isspace.c \
 			ft_putendl.c \
-			#ft_atoi_base.c -> ERROR\
-			#ft_putnbr_base.c -> ERROR\
-			#ft_convert_base.c -> ERROR\
-			#ft_print_address.c -> ERROR\
-			#ft_putnbr_base_fd.c -> ERROR\
-			#ft_print_address_fd.c -> ERROR\
-			#ft_putnbr_base_to_string.c -> ERROR\
+			ft_convert_base.c\
 
 #BONUS PART
 BONUS = ft_lstnew.c \
