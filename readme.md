@@ -1,4 +1,4 @@
-# 💾 Libft
+# 📚 Libft
 
 ## 📝 About
 
