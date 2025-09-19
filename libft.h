@@ -6,7 +6,7 @@
 /*   By: aoberon <aoberon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:12:31 by aoberon           #+#    #+#             */
-/*   Updated: 2023/01/19 13:49:41 by aoberon          ###   ########.fr       */
+/*   Updated: 2025/09/19 10:57:23 by aoberon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,15 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_strncmp(const char *first, const char *second,
 						size_t length);
 
-long				ft_atoi_base(char *str, char *base);
-
 char				*ft_itoa(long n);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
-char				*ft_putnbr_base_to_string(long nbr, char *base);
 char				*ft_strchr(const char *string, int searchedChar);
 char				*ft_strrchr(const char *string, int searchedChar);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
-char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 char				**ft_split(char const *s, char c);
 
@@ -65,14 +60,12 @@ void				ft_bzero(void *s, size_t n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_base(long nbr, char *base);
 void				ft_print_address_fd(void *ptr, int fd);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
-void				ft_putnbr_base_fd(long nbr, char *base, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 void				*ft_memset(void *s, int c, size_t n);

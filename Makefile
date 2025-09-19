@@ -36,16 +36,6 @@ SRCS =	ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putchar_fd.c \
 
-#PERSONAL FUNCTION
-P_SRCS = 	ft_abs.c \
-			ft_putstr.c \
-			ft_putnbr.c \
-			ft_nbrlen.c \
-			ft_putchar.c \
-			ft_isspace.c \
-			ft_putendl.c \
-			ft_convert_base.c\
-
 #BONUS PART
 BONUS = ft_lstnew.c \
 		ft_lstmap.c \
@@ -57,7 +47,15 @@ BONUS = ft_lstnew.c \
 		ft_lstadd_back.c \
 		ft_lstadd_front.c \
 
- 
+#PERSONAL FUNCTION
+P_SRCS = 	ft_abs.c \
+			ft_putstr.c \
+			ft_putnbr.c \
+			ft_nbrlen.c \
+			ft_putchar.c \
+			ft_isspace.c \
+			ft_putendl.c \
+
 INC = includes
 
 RM = rm -f
@@ -66,20 +64,23 @@ CC = gcc -Wall -Wextra -Werror -I${INC}
 
 OBJS = ${SRCS:.c=.o}
 
-PSRCS_OBJS = ${P_SRCS:.c=.o}
-
 BONUS_OBJS = ${BONUS:.c=.o}
+
+PSRCS_OBJS = ${P_SRCS:.c=.o}
 
 all:	${NAME}
 
 .c.o:
 	${CC} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
-		ar rc ${NAME} ${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
-	
+${NAME}:	${OBJS}
+		ar rc ${NAME} ${OBJS}
+
+personal: ${PSRCS_OBJS} ${OBJS}
+		ar rc ${NAME} ${PSRCS_OBJS} ${OBJS}
+
 bonus: ${BONUS_OBJS} ${OBJS}
-	ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
+		ar rc ${NAME} ${BONUS_OBJS} ${OBJS}
 
 clean:	
 	${RM} ${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
@@ -88,6 +89,5 @@ fclean:	clean
 	${RM} ${NAME}
 
 re:	fclean all
-
 
 .PHONY:	all clean fclean re
