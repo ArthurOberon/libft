@@ -58,12 +58,13 @@ The repository is organized into three main parts:
 ### 🏗️ Compilation
 
 ```sh
-make			# build libft.a with mandatory functions
-make			# build libft.a with bonus functions
-make			# build libft.a with personal functions
-make clean		# remove object files
-make fclean		# remove object files + libft.a
-make re			# rebuild everything
+make				# build libft.a with all the functions
+make mandatory		# build libft.a with mandatory functions
+make bonus			# build libft.a with bonus functions
+make personal		# build libft.a with personal functions
+make clean			# remove object files
+make fclean			# remove object files + libft.a
+make re				# rebuild everything
 ```
 
 ### 📌 Using the Library

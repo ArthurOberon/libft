@@ -73,14 +73,17 @@ all:	${NAME}
 .c.o:
 	${CC} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-		ar rc ${NAME} ${OBJS}
+${NAME}:	${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
+		ar rc ${NAME} ${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
 
-personal: ${PSRCS_OBJS} ${OBJS}
-		ar rc ${NAME} ${PSRCS_OBJS} ${OBJS}
+mandatory: ${OBJS}
+		ar rc ${NAME} ${OBJS}
 
 bonus: ${BONUS_OBJS} ${OBJS}
 		ar rc ${NAME} ${BONUS_OBJS} ${OBJS}
+
+personal: ${PSRCS_OBJS} ${OBJS}
+		ar rc ${NAME} ${PSRCS_OBJS} ${OBJS}
 
 clean:	
 	${RM} ${OBJS} ${PSRCS_OBJS} ${BONUS_OBJS}
